@@ -6,6 +6,7 @@ export default {
     orders: 'Orders',
     finance: 'Finance',
     demandForecast: 'Demand Forecast',
+    restocking: 'Restocking',
     companyName: 'Catalyst Components',
     subtitle: 'Inventory Management System'
   },
@@ -106,6 +107,12 @@ export default {
     title: 'Orders',
     description: 'View and manage customer orders',
     allOrders: 'All Orders',
+    submittedOrders: 'Submitted Orders',
+    submittedDescription: 'Restocking orders you have placed, with supplier lead time',
+    noSubmitted: 'No restocking orders submitted yet',
+    leadTime: 'Lead Time',
+    leadTimeDays: '{days} days',
+    submittedOn: 'Submitted',
     totalOrders: 'Total Orders',
     totalRevenue: 'Total Revenue',
     avgOrderValue: 'Avg Order Value',
@@ -168,6 +175,39 @@ export default {
   },
 
   // Demand Forecast
+  restocking: {
+    title: 'Restocking',
+    description: 'Set a budget and order recommended items from the demand forecast',
+    budget: 'Available Budget',
+    budgetHelp: 'Drag to set how much you can spend on this restocking run',
+    recommended: 'Recommended Items',
+    recommendedHelp: 'Ranked by forecast shortfall, filled until the budget runs out',
+    allocated: 'Allocated',
+    remaining: 'Remaining',
+    itemsSelected: 'Items Selected',
+    totalUnits: 'Total Units',
+    placeOrder: 'Place Order',
+    placing: 'Submitting...',
+    orderPlaced: 'Restocking order {orderNumber} submitted',
+    orderFailed: 'Could not submit the order',
+    viewInOrders: 'View in Orders',
+    noRecommendations: 'Budget is too low to cover any item. Increase the budget to see recommendations.',
+    partial: 'Partial',
+    full: 'Full',
+    coverage: 'Coverage',
+    shortfall: 'Shortfall',
+    table: {
+      sku: 'SKU',
+      itemName: 'Item Name',
+      shortfall: 'Shortfall',
+      orderQty: 'Order Qty',
+      unitCost: 'Unit Cost',
+      lineTotal: 'Line Total',
+      leadTime: 'Lead Time',
+      coverage: 'Coverage'
+    }
+  },
+
   demand: {
     title: 'Demand Forecast',
     description: 'Analyze demand trends and forecasts',
