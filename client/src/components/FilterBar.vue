@@ -102,18 +102,18 @@ export default {
 
 <style scoped>
 .filters-bar {
-  background: #f8fafc;
-  border-bottom: 1px solid #e2e8f0;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
   padding: 0.75rem 0;
+  /* Sits directly beneath the sticky top utility bar */
   position: sticky;
-  top: 70px;
+  top: var(--topbar-height);
   z-index: 90;
 }
 
 .filters-container {
   max-width: 1600px;
-  margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1.75rem;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -133,53 +133,56 @@ export default {
 }
 
 .filter-group label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #64748b;
+  font-size: 0.688rem;
+  font-weight: 500;
+  color: var(--gray);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
   white-space: nowrap;
 }
 
 .filter-select {
-  padding: 0.4rem 0.75rem;
-  border: 1px solid #cbd5e1;
-  border-radius: 6px;
+  padding: 0.438rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-family: inherit;
   font-size: 0.813rem;
-  color: #0f172a;
-  background: white;
+  color: var(--ink);
+  background: var(--surface);
   cursor: pointer;
-  transition: all 0.2s;
-  font-weight: 500;
+  transition: border-color 0.2s var(--ease-brand);
+  font-weight: 400;
+  letter-spacing: -0.005em;
   min-width: 140px;
 }
 
 .filter-select:hover {
-  border-color: #94a3b8;
+  border-color: var(--gray-warm);
 }
 
 .filter-select:focus {
   outline: none;
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  border-color: var(--purple);
+  box-shadow: inset 0 -2px 0 0 var(--purple);
 }
 
 .reset-filters-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.4rem;
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 6px;
-  color: #64748b;
+  padding: 0.438rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--gray);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s var(--ease-brand), border-color 0.2s var(--ease-brand);
   flex-shrink: 0;
 }
 
 .reset-filters-btn:hover:not(:disabled) {
-  background: #f8fafc;
-  border-color: #cbd5e1;
-  color: #0f172a;
+  border-color: var(--purple);
+  color: var(--purple);
 }
 
 .reset-filters-btn:disabled {

@@ -323,7 +323,7 @@ export default {
 
 .card {
   background: white;
-  border-radius: 12px;
+  border-radius: var(--radius);
   padding: 1.5rem;
   margin-bottom: 1.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -336,7 +336,7 @@ export default {
 .card-title {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #0f172a;
+  color: var(--ink);
   margin: 0;
 }
 
@@ -346,21 +346,21 @@ export default {
 }
 
 .reports-table th {
-  background: #f8fafc;
+  background: var(--line-soft);
   padding: 0.75rem;
   text-align: left;
   font-weight: 600;
-  color: #64748b;
-  border-bottom: 2px solid #e2e8f0;
+  color: var(--gray);
+  border-bottom: 2px solid var(--line);
 }
 
 .reports-table td {
   padding: 0.75rem;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid var(--line);
 }
 
 .reports-table tr:hover {
-  background: #f8fafc;
+  background: var(--line-soft);
 }
 
 .chart-container {
@@ -393,20 +393,21 @@ export default {
 
 .bar {
   width: 100%;
-  background: linear-gradient(to top, #3b82f6, #60a5fa);
-  border-radius: 4px 4px 0 0;
-  transition: all 0.3s;
+  /* Ramp within the brand purple range rather than purple-to-blue */
+  background: linear-gradient(to top, var(--purple-dark), var(--purple));
+  border-radius: var(--radius);
+  transition: background 0.3s var(--ease-brand);
   cursor: pointer;
 }
 
 .bar:hover {
-  background: linear-gradient(to top, #2563eb, #3b82f6);
+  background: var(--purple);
 }
 
 .bar-label {
   margin-top: 0.5rem;
   font-size: 0.75rem;
-  color: #64748b;
+  color: var(--gray);
   text-align: center;
   transform: rotate(-45deg);
   white-space: nowrap;
@@ -422,22 +423,22 @@ export default {
 
 .stat-card {
   background: white;
-  border-radius: 12px;
+  border-radius: var(--radius);
   padding: 1.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  border-left: 4px solid #3b82f6;
+  border-left: 4px solid var(--purple);
 }
 
 .stat-label {
   font-size: 0.875rem;
-  color: #64748b;
+  color: var(--gray);
   margin-bottom: 0.5rem;
 }
 
 .stat-value {
   font-size: 1.875rem;
   font-weight: 700;
-  color: #0f172a;
+  color: var(--ink);
 }
 
 .badge {
@@ -454,35 +455,35 @@ export default {
 
 .badge.warning {
   background: #fef3c7;
-  color: #92400e;
+  color: #8a4b00;
 }
 
 .badge.danger {
   background: #fee2e2;
-  color: #991b1b;
+  color: #a81f1f;
 }
 
 .positive-change {
-  color: #16a34a;
+  color: var(--purple-deep);
   font-weight: 600;
 }
 
 .negative-change {
-  color: #dc2626;
+  color: var(--coral);
   font-weight: 600;
 }
 
 .loading {
   text-align: center;
   padding: 3rem;
-  color: #64748b;
+  color: var(--gray);
 }
 
 .error {
   background: #fee2e2;
-  color: #991b1b;
+  color: #a81f1f;
   padding: 1rem;
-  border-radius: 8px;
+  border-radius: var(--radius);
   margin: 1rem 0;
 }
 </style>

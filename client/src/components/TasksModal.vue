@@ -260,7 +260,7 @@ export default {
 
 .modal-container {
   background: white;
-  border-radius: 12px;
+  border-radius: var(--radius);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   width: 90%;
   max-width: 700px;
@@ -278,32 +278,32 @@ export default {
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 2rem;
-  border-bottom: 2px solid #e2e8f0;
+  border-bottom: 2px solid var(--line);
 }
 
 .modal-title {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #0f172a;
+  color: var(--ink);
   margin: 0;
 }
 
 .close-button {
   background: none;
   border: none;
-  color: #64748b;
+  color: var(--gray);
   cursor: pointer;
   padding: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 6px;
+  border-radius: var(--radius);
   transition: all 0.2s ease;
 }
 
 .close-button:hover {
-  background: #f1f5f9;
-  color: #0f172a;
+  background: var(--line-soft);
+  color: var(--ink);
 }
 
 .modal-body {
@@ -314,7 +314,7 @@ export default {
 
 .modal-footer {
   padding: 1.5rem 2rem;
-  border-top: 2px solid #e2e8f0;
+  border-top: 2px solid var(--line);
   display: flex;
   justify-content: flex-end;
   gap: 1rem;
@@ -322,23 +322,23 @@ export default {
 
 .btn-secondary {
   padding: 0.75rem 1.5rem;
-  background: #f1f5f9;
-  color: #475569;
+  background: var(--line-soft);
+  color: var(--gray);
   border: none;
-  border-radius: 8px;
+  border-radius: var(--radius);
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .btn-secondary:hover {
-  background: #e2e8f0;
+  background: var(--line);
 }
 
 /* Task Form */
 .task-form {
-  background: #f8fafc;
-  border-radius: 12px;
+  background: var(--line-soft);
+  border-radius: var(--radius);
   padding: 1.5rem;
   margin-bottom: 1.5rem;
 }
@@ -372,14 +372,14 @@ export default {
 label {
   font-size: 0.875rem;
   font-weight: 600;
-  color: #475569;
+  color: var(--gray);
 }
 
 .task-input,
 .task-select {
   padding: 0.75rem;
-  border: 2px solid #e2e8f0;
-  border-radius: 8px;
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
   font-size: 0.95rem;
   transition: border-color 0.2s ease;
   font-family: inherit;
@@ -401,7 +401,7 @@ label {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: var(--radius);
   font-weight: 600;
   cursor: pointer;
   transition: transform 0.2s ease, opacity 0.2s ease;
@@ -420,14 +420,14 @@ label {
 
 .tasks-divider {
   height: 1px;
-  background: #e2e8f0;
+  background: var(--line);
   margin: 2rem 0;
 }
 
 .no-tasks {
   text-align: center;
   padding: 3rem;
-  color: #64748b;
+  color: var(--gray);
   font-size: 1.1rem;
   font-style: italic;
 }
@@ -440,27 +440,27 @@ label {
 
 .task-item {
   background: white;
-  border: 2px solid #e2e8f0;
-  border-radius: 10px;
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
   padding: 1rem 1.25rem;
   transition: all 0.2s ease;
 }
 
 .task-item:hover {
-  border-color: #cbd5e1;
+  border-color: var(--line);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .task-item.priority-high {
-  border-left: 4px solid #dc2626;
+  border-left: 4px solid var(--coral);
 }
 
 .task-item.priority-medium {
-  border-left: 4px solid #f59e0b;
+  border-left: 4px solid var(--amber);
 }
 
 .task-item.priority-low {
-  border-left: 4px solid #2563eb;
+  border-left: 4px solid var(--purple);
 }
 
 .task-item.completed {
@@ -494,7 +494,7 @@ label {
   flex: 1;
   cursor: pointer;
   user-select: none;
-  color: #0f172a;
+  color: var(--ink);
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.4;
@@ -502,16 +502,16 @@ label {
 
 .task-item.completed .task-title {
   text-decoration: line-through;
-  color: #94a3b8;
+  color: var(--gray-warm);
 }
 
 .task-delete-btn {
   width: 28px;
   height: 28px;
-  background: #ef4444;
+  background: var(--coral);
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: var(--radius);
   font-size: 1.25rem;
   line-height: 1;
   cursor: pointer;
@@ -524,7 +524,7 @@ label {
 }
 
 .task-delete-btn:hover {
-  background: #dc2626;
+  background: var(--coral);
   transform: scale(1.1);
 }
 
@@ -539,22 +539,22 @@ label {
   font-weight: 600;
   text-transform: uppercase;
   padding: 0.25rem 0.625rem;
-  border-radius: 4px;
+  border-radius: var(--radius);
   letter-spacing: 0.025em;
 }
 
 .priority-badge.high {
-  background: #fecaca;
-  color: #991b1b;
+  background: #ffecec;
+  color: #a81f1f;
 }
 
 .priority-badge.medium {
-  background: #fed7aa;
-  color: #92400e;
+  background: #fff4e0;
+  color: #8a4b00;
 }
 
 .priority-badge.low {
-  background: #dbeafe;
+  background: #f4e8ff;
   color: #1e40af;
 }
 
@@ -563,39 +563,39 @@ label {
   align-items: center;
   gap: 0.5rem;
   font-size: 0.813rem;
-  color: #64748b;
+  color: var(--gray);
 }
 
 .task-due-date svg {
-  color: #94a3b8;
+  color: var(--gray-warm);
 }
 
 .status-badge {
   font-size: 0.75rem;
   font-weight: 600;
   padding: 0.25rem 0.625rem;
-  border-radius: 4px;
+  border-radius: var(--radius);
   margin-left: auto;
 }
 
 .status-badge.overdue {
-  background: #fecaca;
-  color: #991b1b;
+  background: #ffecec;
+  color: #a81f1f;
 }
 
 .status-badge.urgent {
-  background: #fed7aa;
-  color: #92400e;
+  background: #fff4e0;
+  color: #8a4b00;
 }
 
 .status-badge.upcoming {
-  background: #dbeafe;
+  background: #f4e8ff;
   color: #1e40af;
 }
 
 .status-badge.completed {
-  background: #d1fae5;
-  color: #065f46;
+  background: #f4e8ff;
+  color: var(--purple-dark);
 }
 
 /* Modal transitions */

@@ -20,7 +20,7 @@
           <div class="trend-items">
             <div v-for="item in getForecastsByTrend('increasing').slice(0, 5)" :key="item.id" class="trend-item">
               <span class="item-name">{{ item.item_name }}</span>
-              <span class="item-change">+{{ getChangePercent(item) }}%</span>
+              <span class="item-change">{{ getChangePercent(item) }}%</span>
             </div>
             <div v-if="getForecastsByTrend('increasing').length > 5" class="more-items">
               +{{ getForecastsByTrend('increasing').length - 5 }} {{ t('demand.more') }}
@@ -179,14 +179,15 @@ export default {
       const change = forecast.forecasted_demand - forecast.current_demand
       const changePercent = Math.abs((change / forecast.current_demand) * 100)
 
-      // If change is within ±2%, consider it stable and show blue
+      // Within ±2% counts as stable; the brand palette has no green, so
+      // purple carries both stable and increasing, coral carries decreasing.
       if (changePercent <= 2) {
-        return '#3b82f6' // Blue for stable
+        return '#a100ff' // Brand purple for stable
       }
 
-      if (change > 0) return '#10b981' // Green for increasing
-      if (change < 0) return '#ef4444' // Red for decreasing
-      return '#3b82f6' // Blue for no change
+      if (change > 0) return '#a100ff' // Brand purple for increasing
+      if (change < 0) return '#ff5757' // Brand coral for decreasing
+      return '#a100ff' // Brand purple for no change
     }
 
     const translatePeriod = (period) => {
@@ -233,8 +234,8 @@ export default {
 
 .trend-card {
   background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
   padding: 1.5rem;
   transition: all 0.2s ease;
 }
@@ -244,15 +245,15 @@ export default {
 }
 
 .increasing-card {
-  border-left: 4px solid #10b981;
+  border-left: 4px solid var(--purple);
 }
 
 .stable-card {
-  border-left: 4px solid #3b82f6;
+  border-left: 4px solid var(--purple);
 }
 
 .decreasing-card {
-  border-left: 4px solid #ef4444;
+  border-left: 4px solid var(--coral);
 }
 
 .trend-header {
@@ -261,7 +262,7 @@ export default {
   gap: 1rem;
   margin-bottom: 1rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #f1f5f9;
+  border-bottom: 1px solid var(--line-soft);
 }
 
 .trend-icon {
@@ -270,31 +271,31 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
+  border-radius: var(--radius);
   font-size: 1.75rem;
   font-weight: 700;
   flex-shrink: 0;
 }
 
 .increasing-card .trend-icon {
-  background: #d1fae5;
-  color: #059669;
+  background: #f4e8ff;
+  color: var(--purple-deep);
 }
 
 .stable-card .trend-icon {
-  background: #dbeafe;
-  color: #2563eb;
+  background: #f4e8ff;
+  color: var(--purple);
 }
 
 .decreasing-card .trend-icon {
   background: #fee2e2;
-  color: #dc2626;
+  color: var(--coral);
 }
 
 .trend-label {
   font-size: 0.875rem;
   font-weight: 600;
-  color: #64748b;
+  color: var(--gray);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -302,7 +303,7 @@ export default {
 .trend-count {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #0f172a;
+  color: var(--ink);
   margin-top: 0.25rem;
 }
 
@@ -317,18 +318,18 @@ export default {
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 0.75rem;
-  background: #f8fafc;
-  border-radius: 6px;
+  background: var(--line-soft);
+  border-radius: var(--radius);
   transition: background 0.2s;
 }
 
 .trend-item:hover {
-  background: #f1f5f9;
+  background: var(--line-soft);
 }
 
 .item-name {
   font-size: 0.875rem;
-  color: #0f172a;
+  color: var(--ink);
   font-weight: 500;
   flex: 1;
   overflow: hidden;
@@ -344,24 +345,24 @@ export default {
 }
 
 .increasing-card .item-change {
-  color: #059669;
+  color: var(--purple-deep);
 }
 
 .stable-card .item-change {
-  color: #3b82f6;
+  color: var(--purple);
 }
 
 .decreasing-card .item-change {
-  color: #dc2626;
+  color: var(--coral);
 }
 
 .item-change.neutral {
-  color: #64748b;
+  color: var(--gray);
 }
 
 .more-items {
   font-size: 0.813rem;
-  color: #64748b;
+  color: var(--gray);
   font-style: italic;
   text-align: center;
   padding: 0.5rem;
